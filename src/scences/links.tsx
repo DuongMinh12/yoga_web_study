@@ -4,8 +4,9 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 type Props = {page: String}
 
 const Links = ({page}: Props) => {
+  const lowerCasePage = page.toLowerCase().replace(/ /g, "") 
   return (
-    <AnchorLink>{page}</AnchorLink>
+    <AnchorLink className={} href={`#${lowerCasePage}`} onClick={}>{page}</AnchorLink>
   )
 }
 
