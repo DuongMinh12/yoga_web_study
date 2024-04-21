@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Navbar from "./scences/navbar/navbar"
 import { SelectedPage } from "@/scences/shared/types"
 import Home from "./scences/home/home";
+import Benefits from "@/scences/benefits/benefits";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
@@ -15,15 +16,16 @@ function App() {
       if (window.scrollY !== 0) {
         setIsTopOfPage(false);
       }
-      window.addEventListener("scroll", handleScroll);
-      return () => removeEventListener("scroll", handleScroll);
     }
+    window.addEventListener("scroll", handleScroll);
+    return () => removeEventListener("scroll", handleScroll);
   }, []);
   return (
     <div className="app bg-gray-20">
       <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage}
         setSelectedPage={setSelectedPage} />
       <Home setSelectedPage={setSelectedPage} />
+      <Benefits />
     </div>
   )
 }
