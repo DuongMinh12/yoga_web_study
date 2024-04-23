@@ -4,6 +4,7 @@ import { SelectedPage } from "@/scences/shared/types"
 import Home from "./scences/home/home";
 import Benefits from "@/scences/benefits/benefits";
 import OurClasses from "./scences/ourClasses/ourClasses";
+import ContactUs from "./scences/contactUs/contactUs";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
@@ -28,6 +29,7 @@ function App() {
       <Home setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
       <OurClasses setSelectedPage={setSelectedPage} />
+      <ContactUs setSetlectedPage={setSelectedPage} />
     </div>
   )
 }
